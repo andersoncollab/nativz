@@ -1,6 +1,8 @@
 import { MetadataRoute } from "next";
 import { parentServices, subServices } from "@/data/services";
 import { industries } from "@/data/industries";
+import { blogPosts } from "@/data/blogs";
+import { caseStudies } from "@/data/case-studies";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://nativz.io";
@@ -77,5 +79,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
     }));
 
-    return [...staticPages, ...parentServicePages, ...subServicePages, ...industryPages];
+    // Blog posts
+    const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+        url: `${baseUrl}/blog/${post.slug}/`,
+        lastModified: new Date(post.publishDate),
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+    }));
+
+    // Case studies
+    const caseStudyPages: MetadataRoute.Sitemap = caseStudies.map((cs) => ({
+        url: `${baseUrl}/case-studies/${cs.slug}/`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+    }));
+
+    return [
+        ...staticPages,
+        ...parentServicePages,
+        ...subServicePages,
+        ...industryPages,
+        ...blogPages,
+        ...caseStudyPages,
+    ];
 }

@@ -102,6 +102,37 @@ export interface BlogPost {
     relatedIndustrySlugs: string[];
 }
 
+// --- Case Study Types ---
+
+export interface CaseStudyMetric {
+    label: string;
+    value: string;
+}
+
+export interface CaseStudy {
+    title: string;
+    slug: string;
+    oldSlug?: string;           // WordPress slug for 301 redirect
+    client: string;
+    industry: string;
+    featuredImage?: string;
+    shortDescription: string;
+    servicesProvided: string[];
+    challenge: string;          // HTML content
+    process: string;            // HTML content
+    results: string;            // HTML content
+    metrics: CaseStudyMetric[];
+    testimonial?: {
+        quote: string;
+        author: string;
+        title?: string;
+    };
+    metaTitle: string;
+    metaDescription: string;
+    relatedServiceSlugs: string[];
+    relatedIndustrySlugs: string[];
+}
+
 // --- Redirect Types ---
 
 export interface RedirectEntry {
