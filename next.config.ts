@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
-import redirects from "./src/data/redirects.json";
 
 const nextConfig: NextConfig = {
+  output: "export",
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -10,13 +11,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async redirects() {
-    return redirects.map((r) => ({
-      source: r.source,
-      destination: r.destination,
-      permanent: r.permanent,
-    }));
-  },
+  // Redirects are not supported with static export.
+  // They will be handled at the hosting/CDN level when deployed to production.
 };
 
 export default nextConfig;
