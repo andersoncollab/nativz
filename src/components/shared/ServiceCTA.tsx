@@ -29,7 +29,7 @@ export default function ServiceCTA({
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
 
             <div className="relative max-w-3xl mx-auto px-6 text-center">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-heading">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-display">
                     {heading}
                 </h2>
                 <p className="text-lg text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">

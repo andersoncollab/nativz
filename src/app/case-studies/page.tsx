@@ -27,7 +27,7 @@ export default function CaseStudiesIndexPage() {
                     <span className="inline-block text-xs font-mono uppercase tracking-[0.3em] text-cyan-400 mb-4">
                         Case Studies
                     </span>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-heading">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-display">
                         Results That{" "}
                         <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                             Speak
@@ -64,7 +64,7 @@ export default function CaseStudiesIndexPage() {
                                         {study.industry}
                                     </span>
 
-                                    <h2 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors font-heading">
+                                    <h2 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors font-display">
                                         {study.title}
                                     </h2>
 
@@ -77,7 +77,7 @@ export default function CaseStudiesIndexPage() {
                                         <div className="grid grid-cols-2 gap-4 mb-6">
                                             {study.metrics.slice(0, 4).map((metric, i) => (
                                                 <div key={i} className="text-center">
-                                                    <div className="text-2xl font-bold text-cyan-400 font-heading">
+                                                    <div className="text-2xl font-bold text-cyan-400 font-display">
                                                         {metric.value}
                                                     </div>
                                                     <div className="text-xs text-slate-500 uppercase tracking-wider">

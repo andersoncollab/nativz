@@ -11,9 +11,9 @@
   --color-navy-dark: #060E1A;
   --color-charcoal: #111827;
   --color-charcoal-light: #1A2332;
-  --color-electric-blue: #2563EB;
-  --color-electric-blue-hover: #3B82F6;
-  --color-electric-blue-dark: #1D4ED8;
+  --color-electric-blue: #00ADEF;
+  --color-electric-blue-hover: #1CBCF7;
+  --color-electric-blue-dark: #0090CC;
   --color-cool-gray: #9CA3AF;
   --color-cool-gray-light: #D1D5DB;
   --color-blue-gray: #1E3A5F;
@@ -26,9 +26,9 @@
   --color-white-border: rgba(255, 255, 255, 0.1);
 
   /* ---- Font Families ---- */
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --font-sans: var(--font-outfit), "Outfit", system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-outfit), "Outfit", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Menlo", monospace;
 
   /* ---- Spacing Scale ---- */
   --spacing-18: 4.5rem;
@@ -334,6 +334,51 @@ body {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ========================================
+   ANIMATED DIVIDER
+   ======================================== */
+
+.divider-animate {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.divider-animate.divider-visible {
+  opacity: 1;
+}
+
+.divider-shimmer {
+  animation: dividerShimmer 3s ease-in-out infinite;
+}
+
+@keyframes dividerShimmer {
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}
+
+/* Section break background */
+.section-break-mesh {
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(0, 173, 239, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 50%, rgba(6, 182, 212, 0.04) 0%, transparent 50%);
+}
+
+.section-alt-bg {
+  background: linear-gradient(180deg,
+      rgba(15, 29, 50, 0.5) 0%,
+      rgba(17, 24, 39, 0.3) 50%,
+      rgba(15, 29, 50, 0.5) 100%);
 }
 
 /* ========================================

@@ -95,7 +95,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                         ))}
                     </div>
 
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-heading leading-tight">
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-display leading-tight">
                         {post.title}
                     </h1>
 
@@ -126,7 +126,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 {/* Article Content */}
                 <article className="max-w-4xl">
                     <div
-                        className="prose prose-invert prose-cyan max-w-none prose-headings:font-heading prose-headings:text-white prose-p:text-slate-300 prose-a:text-cyan-400 prose-strong:text-white prose-img:rounded-xl"
+                        className="prose prose-invert prose-cyan max-w-none prose-headings:font-display prose-headings:text-white prose-p:text-slate-300 prose-a:text-cyan-400 prose-strong:text-white prose-img:rounded-xl"
                         dangerouslySetInnerHTML={{ __html: post.content }}
                     />
                 </article>

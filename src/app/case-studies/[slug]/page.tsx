@@ -73,7 +73,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                         </span>
                     </div>
 
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-heading leading-tight">
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-display leading-tight">
                         {study.title}
                     </h1>
 
@@ -102,7 +102,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                                     key={i}
                                     className="glass-card p-6 rounded-xl text-center"
                                 >
-                                    <div className="text-3xl md:text-4xl font-bold text-cyan-400 font-heading mb-2">
+                                    <div className="text-3xl md:text-4xl font-bold text-cyan-400 font-display mb-2">
                                         {metric.value}
                                     </div>
                                     <div className="text-xs text-slate-400 uppercase tracking-wider">
@@ -117,7 +117,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                 {/* Services Provided */}
                 {study.servicesProvided.length > 0 && (
                     <div className="max-w-4xl mb-12">
-                        <h2 className="text-2xl font-bold text-white mb-4 font-heading">
+                        <h2 className="text-2xl font-bold text-white mb-4 font-display">
                             Services Provided
                         </h2>
                         <div className="flex flex-wrap gap-2">
@@ -136,7 +136,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                 {/* Challenge */}
                 {study.challenge && (
                     <section className="max-w-4xl mb-12">
-                        <h2 className="text-2xl font-bold text-white mb-4 font-heading">
+                        <h2 className="text-2xl font-bold text-white mb-4 font-display">
                             The Challenge
                         </h2>
                         <div
@@ -149,7 +149,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                 {/* Process */}
                 {study.process && (
                     <section className="max-w-4xl mb-12">
-                        <h2 className="text-2xl font-bold text-white mb-4 font-heading">
+                        <h2 className="text-2xl font-bold text-white mb-4 font-display">
                             Our Approach
                         </h2>
                         <div
@@ -162,7 +162,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                 {/* Results */}
                 {study.results && (
                     <section className="max-w-4xl mb-12">
-                        <h2 className="text-2xl font-bold text-white mb-4 font-heading">
+                        <h2 className="text-2xl font-bold text-white mb-4 font-display">
                             Results
                         </h2>
                         <div

@@ -1,43 +1,31 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Nativz | Creative Volume for the Andromeda Era",
+    default: "Nativz | Dallas Creative & Marketing Agency",
     template: "%s | Nativz",
   },
   description:
-    "Nativz is a DFW-based digital marketing agency specializing in creative content production, social media domination, and algorithm-optimized marketing systems. If you need an army of nerds, you know who to call.",
+    "Nativz is a premium Dallas-Fort Worth marketing agency that builds AI-infused content systems, manages serious ad spend, and produces creative at volume. Marketing systems engineered for rapid growth.",
   keywords: [
     "digital marketing agency",
+    "Dallas marketing agency",
     "DFW marketing",
     "social media agency",
     "content production",
-    "Meta Andromeda",
-    "creative volume",
+    "AI marketing",
+    "creative agency Dallas",
     "Nativz",
     "Dallas Fort Worth",
   ],
@@ -50,23 +38,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://nativz.io",
     siteName: "Nativz",
-    title: "Nativz | Creative Volume for the Andromeda Era",
+    title: "Nativz | Dallas Creative & Marketing Agency",
     description:
-      "The most creatively aggressive digital marketing agency in DFW. Creative content production, social media domination, and algorithm-optimized marketing systems.",
+      "Premium Dallas-Fort Worth marketing agency. AI-infused content systems, creative production at volume, and marketing machines built for rapid growth.",
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Nativz - Creative Volume for the Andromeda Era",
+        alt: "Nativz - Dallas Creative & Marketing Agency",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nativz | Creative Volume for the Andromeda Era",
+    title: "Nativz | Dallas Creative & Marketing Agency",
     description:
-      "The most creatively aggressive digital marketing agency in DFW.",
+      "Premium Dallas-Fort Worth marketing agency. AI-infused content systems and creative production at volume.",
     images: ["/images/og-image.png"],
   },
   robots: {
@@ -90,7 +78,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+        className={`${outfit.variable} font-sans antialiased`}
       >
         <Navbar />
         {children}

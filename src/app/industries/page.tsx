@@ -27,7 +27,7 @@ export default function IndustriesIndexPage() {
                     <span className="inline-block text-xs font-mono uppercase tracking-[0.3em] text-cyan-400 mb-4">
                         Industry Expertise
                     </span>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-heading">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-display">
                         Industries We{" "}
                         <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                             Dominate
@@ -50,7 +50,7 @@ export default function IndustriesIndexPage() {
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             <div className="relative">
-                                <h2 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors font-heading">
+                                <h2 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors font-display">
                                     {industry.title}
                                 </h2>
                                 <p className="text-slate-400 text-sm mb-4 leading-relaxed">

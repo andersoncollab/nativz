@@ -28,7 +28,7 @@ export default function BlogIndexPage() {
                     <span className="inline-block text-xs font-mono uppercase tracking-[0.3em] text-cyan-400 mb-4">
                         Blog
                     </span>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-heading">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-display">
                         Marketing{" "}
                         <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                             Intelligence
@@ -90,7 +90,7 @@ export default function BlogIndexPage() {
                                         ))}
                                     </div>
 
-                                    <h2 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors font-heading line-clamp-2">
+                                    <h2 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors font-display line-clamp-2">
                                         {post.title}
                                     </h2>
 

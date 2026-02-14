@@ -31,7 +31,7 @@ const caseStudies = [
     {
         title: "E-Commerce Content Production",
         category: "Development",
-        description: "Full production pipeline producing 60+ creatives per month for Meta Ads.",
+        description: "Full production pipeline producing thousands of creatives per month for Meta Ads.",
         metrics: "-42% CPM",
         color: "cyan",
         image: getAssetPath("/images/backgrounds/Bridgeshotnativz.jpg"),

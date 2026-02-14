@@ -1,8 +1,14 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getParentService, getSubServicesForParent, parentServices, getRelatedServices } from "@/data/services";
+import { getServiceSectionImage } from "@/data/sectionImages";
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import ParallaxSection from "@/components/ui/ParallaxSection";
+import AnimatedDivider from "@/components/ui/AnimatedDivider";
+import ServiceIllustration from "@/components/ui/ServiceIllustration";
 import FAQAccordion from "@/components/shared/FAQAccordion";
 import SchemaMarkup from "@/components/shared/SchemaMarkup";
 import ServiceCTA from "@/components/shared/ServiceCTA";
@@ -36,6 +42,36 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
 }
 
+/* ── Blue-only accent palette ── */
+const categoryAccents: Record<string, { gradient: string; glow: string; badge: string }> = {
+    "social-media": { gradient: "from-sky-400 to-cyan-400", glow: "bg-sky-500/[0.04]", badge: "bg-sky-500/10 text-sky-400 border-sky-500/20" },
+    "advertising": { gradient: "from-blue-500 to-electric-blue", glow: "bg-blue-500/[0.04]", badge: "bg-blue-500/10 text-blue-400 border-blue-500/20" },
+    "content-production": { gradient: "from-cyan-400 to-sky-500", glow: "bg-cyan-400/[0.04]", badge: "bg-cyan-400/10 text-cyan-400 border-cyan-400/20" },
+    "web-development": { gradient: "from-blue-400 to-cyan-500", glow: "bg-blue-400/[0.04]", badge: "bg-blue-400/10 text-blue-400 border-blue-400/20" },
+    "branding": { gradient: "from-sky-500 to-blue-500", glow: "bg-sky-500/[0.04]", badge: "bg-sky-500/10 text-sky-400 border-sky-500/20" },
+    "seo": { gradient: "from-electric-blue to-cyan", glow: "bg-electric-blue/[0.04]", badge: "bg-electric-blue/10 text-electric-blue border-electric-blue/20" },
+    "commercial-production": { gradient: "from-cyan-500 to-blue-400", glow: "bg-cyan-500/[0.04]", badge: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20" },
+    "ai-marketing": { gradient: "from-electric-blue to-sky-400", glow: "bg-electric-blue/[0.04]", badge: "bg-electric-blue/10 text-electric-blue border-electric-blue/20" },
+    "email-marketing": { gradient: "from-sky-400 to-blue-500", glow: "bg-sky-400/[0.04]", badge: "bg-sky-400/10 text-sky-400 border-sky-400/20" },
+    "aeo": { gradient: "from-cyan-400 to-electric-blue", glow: "bg-cyan-400/[0.04]", badge: "bg-cyan-400/10 text-cyan-400 border-cyan-400/20" },
+};
+
+const defaultAccent = { gradient: "from-electric-blue to-cyan", glow: "bg-electric-blue/[0.04]", badge: "bg-electric-blue/10 text-electric-blue border-electric-blue/20" };
+
+/* Map categories to illustration variants */
+const illustrationVariants: Record<string, "network" | "wave" | "data" | "pulse" | "orbit"> = {
+    "social-media": "network",
+    "advertising": "data",
+    "content-production": "wave",
+    "web-development": "orbit",
+    "branding": "pulse",
+    "seo": "data",
+    "commercial-production": "wave",
+    "ai-marketing": "orbit",
+    "email-marketing": "pulse",
+    "aeo": "network",
+};
+
 export default async function ParentServicePage({ params }: PageProps) {
     const { parentSlug } = await params;
     const service = getParentService(parentSlug);
@@ -43,9 +79,12 @@ export default async function ParentServicePage({ params }: PageProps) {
 
     const subServices = getSubServicesForParent(service.slug);
     const relatedServices = getRelatedServices(service);
+    const accent = categoryAccents[service.category] || defaultAccent;
+    const illustration = illustrationVariants[service.category] || "network";
+    const sectionImages = service.content.map((_, i) => getServiceSectionImage(service.category, i));
 
     return (
-        <main className="pt-32 pb-16 min-h-screen">
+        <main className="min-h-screen">
             <SchemaMarkup
                 type="service"
                 name={service.title}
@@ -53,102 +92,318 @@ export default async function ParentServicePage({ params }: PageProps) {
                 url={`https://nativz.io/services/${service.slug}/`}
             />
 
-            <div className="max-w-7xl mx-auto px-6">
-                <Breadcrumbs
-                    items={[
-                        { label: "Services", href: "/services" },
-                        { label: service.title, href: `/services/${service.slug}/` },
-                    ]}
-                />
+            {/* ═══════════════════════════════════════════════
+                HERO — Full-width with animated background
+            ═══════════════════════════════════════════════ */}
+            <section className="relative pt-32 pb-24 md:pb-36 overflow-hidden">
+                {/* Animated gradient orbs */}
+                <div className={`absolute top-0 right-0 w-[800px] h-[800px] ${accent.glow} rounded-full blur-[200px] animate-pulse`} />
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan/[0.03] rounded-full blur-[160px] animate-pulse" style={{ animationDelay: "2s" }} />
+                <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-electric-blue/[0.02] rounded-full blur-[120px] animate-[float_8s_ease-in-out_infinite]" />
 
-                {/* Hero */}
-                <div className="mb-16">
-                    <span className="inline-block text-xs font-mono uppercase tracking-[0.3em] text-cyan-400 mb-4">
-                        {service.category.replace(/-/g, " ")}
-                    </span>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-heading">
-                        {service.title}
-                    </h1>
-                    <p className="text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed">
-                        {service.shortDescription}
-                    </p>
+                {/* Dot grid pattern */}
+                <div className="absolute inset-0 opacity-[0.03]" style={{
+                    backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px)",
+                    backgroundSize: "32px 32px"
+                }} />
+
+                <div className="relative z-10 max-w-7xl mx-auto px-6">
+                    <Breadcrumbs
+                        items={[
+                            { label: "Services", href: "/services" },
+                            { label: service.title, href: `/services/${service.slug}/` },
+                        ]}
+                    />
+
+                    <ScrollReveal>
+                        <div className="mt-8 max-w-4xl">
+                            <span className={`inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.3em] px-4 py-1.5 rounded-full border mb-6 ${accent.badge}`}>
+                                {service.category.replace(/-/g, " ")}
+                            </span>
+                            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-8 font-display leading-[1.1]">
+                                {service.title}
+                            </h1>
+                            <p className="text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed">
+                                {service.shortDescription}
+                            </p>
+
+                            <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
+                                <Link
+                                    href="/contact"
+                                    className="btn-gradient px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 hover:shadow-[0_0_40px_rgba(0,173,239,0.3)] hover:-translate-y-0.5 transition-all duration-300"
+                                >
+                                    Get a Free Strategy Call
+                                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </Link>
+                                {subServices.length > 0 && (
+                                    <a
+                                        href="#services"
+                                        className="btn-gradient-outline px-8 py-4 rounded-xl text-base font-bold"
+                                    >
+                                        View All Services
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    </ScrollReveal>
                 </div>
 
-                {/* Content Sections */}
-                {service.content.length > 0 && (
-                    <div className="prose prose-invert prose-cyan max-w-4xl mb-16">
-                        {service.content.map((section, index) => (
-                            <div key={index} className="mb-12">
-                                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 font-heading">
-                                    {section.heading}
-                                </h2>
-                                <div
-                                    className="text-slate-300 leading-relaxed"
-                                    dangerouslySetInnerHTML={{ __html: section.body }}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                )}
+                {/* Bottom fade */}
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-navy-dark to-transparent" />
+            </section>
 
-                {/* Sub-Services Grid */}
-                {subServices.length > 0 && (
-                    <section className="mb-16">
-                        <h2 className="text-3xl font-bold text-white mb-8 font-heading">
-                            Specialized Services
-                        </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {subServices.map((sub) => (
-                                <Link
-                                    key={sub.slug}
-                                    href={`/services/${service.slug}/${sub.slug}/`}
-                                    className="glass-card p-6 rounded-xl hover:bg-white/10 transition-all duration-300 group"
-                                >
-                                    <h3 className="text-white font-semibold mb-2 group-hover:text-cyan-400 transition-colors">
-                                        {sub.title}
-                                    </h3>
-                                    <p className="text-sm text-slate-400 mb-3 line-clamp-2">
-                                        {sub.shortDescription}
-                                    </p>
-                                    <span className="inline-flex items-center gap-1 text-sm text-cyan-400 group-hover:gap-2 transition-all">
-                                        Learn more
-                                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                        </svg>
-                                    </span>
-                                </Link>
-                            ))}
-                        </div>
-                    </section>
-                )}
+            {/* ═══════════════════════════════════════════════
+                CONTENT SECTIONS — Alternating text + image layout
+            ═══════════════════════════════════════════════ */}
+            {service.content.length > 0 && service.content.map((section, index) => {
+                const imageOnRight = index % 2 === 0;
+                return (
+                    <div key={index}>
+                        {/* Animated divider between sections */}
+                        <AnimatedDivider variant={index === 0 ? "glow" : index % 2 === 0 ? "mesh" : "dots"} />
 
-                {/* Deliverables */}
-                {service.deliverables.length > 0 && (
-                    <section className="mb-16">
-                        <h2 className="text-3xl font-bold text-white mb-8 font-heading">What You Get</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {service.deliverables.map((d, i) => (
-                                <div key={i} className="glass-card p-6 rounded-xl">
-                                    <h3 className="text-white font-semibold mb-2">{d.title}</h3>
-                                    <p className="text-sm text-slate-400">{d.description}</p>
+                        <section className={`relative py-24 md:py-32 overflow-hidden ${index % 2 === 1 ? "section-alt-bg" : ""}`}>
+                            {/* Subtle background variation per section */}
+                            {index % 2 === 0 && (
+                                <div className="absolute inset-0 section-break-mesh" />
+                            )}
+
+                            <div className="relative max-w-7xl mx-auto px-6">
+                                <div className={`flex flex-col ${imageOnRight ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-16`}>
+                                    {/* Text column */}
+                                    <ScrollReveal delay={80} className="flex-1 min-w-0">
+                                        <div>
+                                            <div className="flex items-start gap-5 mb-8">
+                                                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${accent.gradient} flex items-center justify-center text-white font-bold text-lg flex-shrink-0 shadow-lg shadow-electric-blue/10`}>
+                                                    {String(index + 1).padStart(2, "0")}
+                                                </div>
+                                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white font-display leading-tight pt-2">
+                                                    {section.heading}
+                                                </h2>
+                                            </div>
+                                            <div
+                                                className="text-slate-300 text-lg leading-relaxed prose prose-invert prose-lg prose-cyan max-w-none [&>p]:mb-6 [&>ul]:my-6 [&>ul>li]:mb-3 [&_strong]:text-white"
+                                                dangerouslySetInnerHTML={{ __html: section.body }}
+                                            />
+                                        </div>
+                                    </ScrollReveal>
+
+                                    {/* Image column */}
+                                    <ScrollReveal delay={200} className="flex-1 min-w-0 w-full lg:w-auto">
+                                        <div className="relative group">
+                                            <div className={`absolute -inset-4 bg-gradient-to-br ${accent.gradient} rounded-3xl opacity-[0.08] blur-2xl group-hover:opacity-[0.15] transition-opacity duration-500`} />
+                                            <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] shadow-2xl shadow-black/30">
+                                                <Image
+                                                    src={sectionImages[index]}
+                                                    alt={section.heading}
+                                                    width={640}
+                                                    height={480}
+                                                    className="w-full h-auto object-cover aspect-[4/3] group-hover:scale-[1.03] transition-transform duration-700"
+                                                />
+                                                {/* Overlay gradient */}
+                                                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent" />
+                                            </div>
+                                        </div>
+                                    </ScrollReveal>
                                 </div>
-                            ))}
+
+                                {/* Insert illustration after every 2nd content section */}
+                                {index % 2 === 1 && index < service.content.length - 1 && (
+                                    <ScrollReveal delay={200}>
+                                        <ServiceIllustration
+                                            variant={illustration}
+                                            className="mt-12 md:mt-16"
+                                        />
+                                    </ScrollReveal>
+                                )}
+                            </div>
+                        </section>
+                    </div>
+                );
+            })}
+
+            {/* ═══════════════════════════════════════════════
+                PARALLAX BREAK — Stats / proof band
+            ═══════════════════════════════════════════════ */}
+            <ParallaxSection speed={0.3} className="py-20 md:py-28">
+                <div className="max-w-5xl mx-auto px-6 text-center">
+                    <ScrollReveal>
+                        <ServiceIllustration variant={illustration} className="mb-8 opacity-40" />
+                        <p className="text-xl md:text-2xl lg:text-3xl text-white/90 font-display font-bold leading-relaxed max-w-3xl mx-auto">
+                            &ldquo;We don&apos;t run campaigns. We build{" "}
+                            <span className="text-gradient">marketing systems</span>{" "}
+                            that compound over time.&rdquo;
+                        </p>
+                        <p className="text-sm text-slate-400 mt-6 font-mono uppercase tracking-widest">
+                            The Nativz Philosophy
+                        </p>
+                    </ScrollReveal>
+                </div>
+            </ParallaxSection>
+
+            {/* ═══════════════════════════════════════════════
+                SUB-SERVICES GRID
+            ═══════════════════════════════════════════════ */}
+            {subServices.length > 0 && (
+                <>
+                    <AnimatedDivider variant="glow" />
+
+                    <section id="services" className="relative py-28 md:py-36 overflow-hidden">
+                        {/* Background accent */}
+                        <div className="absolute inset-0 section-break-mesh" />
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[1px] bg-gradient-to-r from-transparent via-electric-blue/20 to-transparent" />
+
+                        <div className="relative max-w-7xl mx-auto px-6">
+                            <ScrollReveal>
+                                <div className="text-center mb-16">
+                                    <span className="inline-block text-xs font-mono uppercase tracking-[0.3em] text-cyan mb-4">
+                                        Explore
+                                    </span>
+                                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-display">
+                                        Specialized Services
+                                    </h2>
+                                    <p className="text-slate-400 mt-6 max-w-2xl mx-auto text-lg">
+                                        Each service is built as a system — not a one-off project. Click through to see how we approach each discipline.
+                                    </p>
+                                </div>
+                            </ScrollReveal>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {subServices.map((sub, i) => (
+                                    <ScrollReveal key={sub.slug} delay={i * 60}>
+                                        <Link
+                                            href={`/services/${service.slug}/${sub.slug}/`}
+                                            className="glass-card p-8 rounded-2xl hover:bg-white/[0.06] hover:border-electric-blue/30 hover:-translate-y-2 transition-all duration-300 group block h-full relative overflow-hidden"
+                                        >
+                                            {/* Card number accent */}
+                                            <span className="absolute top-4 right-4 text-[4rem] font-black text-white/[0.03] font-display leading-none group-hover:text-electric-blue/[0.08] transition-colors duration-500">
+                                                {String(i + 1).padStart(2, "0")}
+                                            </span>
+
+                                            <div className="relative z-10">
+                                                {/* Accent bar */}
+                                                <div className={`w-10 h-1 rounded-full bg-gradient-to-r ${accent.gradient} mb-5 group-hover:w-16 transition-all duration-300`} />
+                                                <h3 className="text-lg text-white font-bold mb-3 group-hover:text-cyan transition-colors font-display">
+                                                    {sub.title}
+                                                </h3>
+                                                <p className="text-sm text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+                                                    {sub.shortDescription}
+                                                </p>
+                                                <span className="inline-flex items-center gap-1.5 text-sm text-electric-blue font-medium group-hover:text-cyan group-hover:gap-3 transition-all duration-300">
+                                                    Learn more
+                                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </Link>
+                                    </ScrollReveal>
+                                ))}
+                            </div>
                         </div>
                     </section>
-                )}
+                </>
+            )}
 
-                {/* FAQ */}
-                <FAQAccordion items={service.faqItems} />
+            {/* ═══════════════════════════════════════════════
+                PARALLAX BREAK — Visual separator before deliverables
+            ═══════════════════════════════════════════════ */}
+            {service.deliverables.length > 0 && (
+                <ParallaxSection speed={0.2} className="py-16 md:py-24">
+                    <div className="max-w-4xl mx-auto px-6">
+                        <div className="flex items-center justify-center gap-6">
+                            {["500+", "$500M+", "1,000s"].map((stat, i) => (
+                                <ScrollReveal key={i} delay={i * 100}>
+                                    <div className="text-center px-6 md:px-10">
+                                        <div className="text-2xl md:text-3xl font-bold text-gradient font-display">{stat}</div>
+                                        <div className="text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">
+                                            {["Brands Served", "Ad Spend Managed", "Assets / Month"][i]}
+                                        </div>
+                                    </div>
+                                </ScrollReveal>
+                            ))}
+                        </div>
+                    </div>
+                </ParallaxSection>
+            )}
 
-                {/* Related Services */}
-                <RelatedServices services={relatedServices} />
+            {/* ═══════════════════════════════════════════════
+                DELIVERABLES — Feature cards
+            ═══════════════════════════════════════════════ */}
+            {service.deliverables.length > 0 && (
+                <>
+                    <AnimatedDivider variant="mesh" />
 
-                {/* CTA */}
-                <ServiceCTA
-                    heading={`Ready to Transform Your ${service.title.split(" ")[0]} Strategy?`}
-                    description="Book a strategy call with our team. We will assess your current marketing and build a plan tailored to your business goals."
-                />
-            </div>
+                    <section className="relative py-28 md:py-36 overflow-hidden">
+                        <div className={`absolute bottom-20 right-0 w-[500px] h-[500px] ${accent.glow} rounded-full blur-[160px]`} />
+
+                        <div className="relative max-w-7xl mx-auto px-6">
+                            <ScrollReveal>
+                                <div className="text-center mb-16">
+                                    <span className="inline-block text-xs font-mono uppercase tracking-[0.3em] text-cyan mb-4">
+                                        Deliverables
+                                    </span>
+                                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-display">
+                                        What You Get
+                                    </h2>
+                                </div>
+                            </ScrollReveal>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                                {service.deliverables.map((d, i) => (
+                                    <ScrollReveal key={i} delay={i * 60}>
+                                        <div className="glass-card p-8 rounded-2xl hover:bg-white/[0.04] hover:-translate-y-1 transition-all duration-300 group h-full">
+                                            <div className="flex items-start gap-5">
+                                                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${accent.gradient} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-electric-blue/10`}>
+                                                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <h3 className="text-white font-bold mb-2 font-display text-lg">{d.title}</h3>
+                                                    <p className="text-sm text-slate-400 leading-relaxed">{d.description}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ScrollReveal>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                </>
+            )}
+
+            {/* ═══════════════════════════════════════════════
+                FAQ
+            ═══════════════════════════════════════════════ */}
+            <AnimatedDivider variant="dots" />
+
+            <section className="relative py-28 md:py-36 overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6">
+                    <FAQAccordion items={service.faqItems} />
+                </div>
+            </section>
+
+            {/* ═══════════════════════════════════════════════
+                RELATED SERVICES
+            ═══════════════════════════════════════════════ */}
+            <AnimatedDivider variant="glow" />
+
+            <section className="relative py-16 overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6">
+                    <RelatedServices services={relatedServices} />
+                </div>
+            </section>
+
+            {/* ═══════════════════════════════════════════════
+                CTA
+            ═══════════════════════════════════════════════ */}
+            <ServiceCTA
+                heading={`Ready to Transform Your ${service.title.split(" ")[0]} Strategy?`}
+                description="Book a strategy call with our team. We will assess your current marketing and build a plan tailored to your business goals."
+            />
         </main>
     );
 }
