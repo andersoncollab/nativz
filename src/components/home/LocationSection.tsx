@@ -1,12 +1,13 @@
 import Image from "next/image";
 import ScrollReveal from "../ui/ScrollReveal";
+import { getAssetPath } from "@/lib/assets";
 
 export default function LocationSection() {
     return (
         <section className="py-24 relative overflow-hidden">
             {/* Background Photo — Margaret Hunt Hill Bridge */}
             <Image
-                src="/images/backgrounds/bridgenativz.jpg"
+                src={getAssetPath("/images/backgrounds/bridgenativz.jpg")}
                 alt="Margaret Hunt Hill Bridge in Dallas"
                 fill
                 className="object-cover"
@@ -74,7 +75,7 @@ export default function LocationSection() {
                             <div className="glass-card p-1 rounded-2xl overflow-hidden">
                                 <div className="relative h-80 md:h-96 rounded-xl overflow-hidden">
                                     <Image
-                                        src="/images/backgrounds/reuniontowernativz.jpg"
+                                        src={getAssetPath("/images/backgrounds/reuniontowernativz.jpg")}
                                         alt="Dallas skyline from Reunion Tower"
                                         fill
                                         className="object-cover"

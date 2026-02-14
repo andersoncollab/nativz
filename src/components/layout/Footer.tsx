@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getAssetPath } from "@/lib/assets";
 
 const serviceLinks = [
     { label: "Social Media Management", href: "/services/social-media" },
@@ -67,7 +68,7 @@ export default function Footer() {
                     <div className="lg:col-span-1">
                         <Link href="/">
                             <Image
-                                src="/images/nativz-logo.svg"
+                                src={getAssetPath("/images/nativz-logo.svg")}
                                 alt="Nativz"
                                 width={120}
                                 height={33}

@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { getAssetPath } from "@/lib/assets";
 
 const services = [
     {
@@ -134,7 +135,7 @@ export default function Navbar() {
                     {/* Logo */}
                     <Link href="/" className="flex-shrink-0 relative z-10">
                         <Image
-                            src="/images/nativz-logo.svg"
+                            src={getAssetPath("/images/nativz-logo.svg")}
                             alt="Nativz"
                             width={130}
                             height={36}

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import ScrollReveal from "../ui/ScrollReveal";
 import AnimatedCounter from "../ui/AnimatedCounter";
+import { getAssetPath } from "@/lib/assets";
 
 const BRANDFETCH_CLIENT = "1idTGmj32petBkJIqcI";
 
@@ -50,7 +51,7 @@ export default function SocialProof() {
         <section className="py-24 relative overflow-hidden">
             {/* Background Photo */}
             <Image
-                src="/images/backgrounds/Dallas-Skyline.jpg"
+                src={getAssetPath("/images/backgrounds/Dallas-Skyline.jpg")}
                 alt="Dallas downtown skyscrapers"
                 fill
                 className="object-cover"

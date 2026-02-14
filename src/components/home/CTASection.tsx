@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import ScrollReveal from "../ui/ScrollReveal";
+import { getAssetPath } from "@/lib/assets";
 
 export default function CTASection() {
     const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ export default function CTASection() {
         <section className="py-24 relative overflow-hidden">
             {/* Background Photo — Downtown Dallas at night */}
             <Image
-                src="/images/backgrounds/downtownnativz2.jpg"
+                src={getAssetPath("/images/backgrounds/downtownnativz2.jpg")}
                 alt="Downtown Dallas skyline at night"
                 fill
                 className="object-cover"

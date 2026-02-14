@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "../ui/ScrollReveal";
+import { getAssetPath } from "@/lib/assets";
 
 const tiers = [
     {
@@ -58,7 +59,7 @@ export default function PricingSection() {
         <section id="pricing" className="py-24 relative overflow-hidden">
             {/* Background Photo */}
             <Image
-                src="/images/backgrounds/smunativz.jpg"
+                src={getAssetPath("/images/backgrounds/smunativz.jpg")}
                 alt="Dallas architecture"
                 fill
                 className="object-cover"

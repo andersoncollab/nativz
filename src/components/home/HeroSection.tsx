@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { getAssetPath } from "@/lib/assets";
 
 export default function HeroSection() {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background Photo */}
             <Image
-                src="/images/backgrounds/Bridgeshotnativz.jpg"
+                src={getAssetPath("/images/backgrounds/Bridgeshotnativz.jpg")}
                 alt="Dallas skyline at night"
                 fill
                 priority

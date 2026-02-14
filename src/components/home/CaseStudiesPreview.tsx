@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "../ui/ScrollReveal";
+import { getAssetPath } from "@/lib/assets";
 
 const caseStudies = [
     {
@@ -9,7 +10,7 @@ const caseStudies = [
         description: "Generated 1.5M organic views in 30 days through creative volume strategy.",
         metrics: "+340% Engagement",
         color: "electric-blue",
-        image: "/images/backgrounds/downtownnativz.jpg",
+        image: getAssetPath("/images/backgrounds/downtownnativz.jpg"),
     },
     {
         title: "Mahindra Brand Launch Campaign",
@@ -17,7 +18,7 @@ const caseStudies = [
         description: "Built and launched a complete brand identity and content system for US market entry.",
         metrics: "500K+ Reach",
         color: "cyan",
-        image: "/images/backgrounds/westelmnativz.jpg",
+        image: getAssetPath("/images/backgrounds/westelmnativz.jpg"),
     },
     {
         title: "Local DFW Restaurant Chain SEO",
@@ -25,7 +26,7 @@ const caseStudies = [
         description: "First page rankings for 47 competitive local keywords within 90 days.",
         metrics: "+215% Organic Traffic",
         color: "electric-blue",
-        image: "/images/backgrounds/oldredmuseumnativz.jpg",
+        image: getAssetPath("/images/backgrounds/oldredmuseumnativz.jpg"),
     },
     {
         title: "E-Commerce Content Production",
@@ -33,7 +34,7 @@ const caseStudies = [
         description: "Full production pipeline producing 60+ creatives per month for Meta Ads.",
         metrics: "-42% CPM",
         color: "cyan",
-        image: "/images/backgrounds/Bridgeshotnativz.jpg",
+        image: getAssetPath("/images/backgrounds/Bridgeshotnativz.jpg"),
     },
 ];
 
@@ -49,7 +50,7 @@ export default function CaseStudiesPreview() {
         <section className="py-24 relative overflow-hidden">
             {/* Background Photo */}
             <Image
-                src="/images/backgrounds/attnativz.jpg"
+                src={getAssetPath("/images/backgrounds/attnativz.jpg")}
                 alt="Dallas Arts District reflection"
                 fill
                 className="object-cover"
