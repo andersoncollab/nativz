@@ -1,0 +1,377 @@
+[
+    {
+        "source": "/services/aeo-services/",
+        "destination": "/services/aeo/",
+        "permanent": true
+    },
+    {
+        "source": "/the-top-advertising-agencies-in-dallas-tx-2025-rankings/",
+        "destination": "/blog/top-advertising-agencies-dallas-2025/",
+        "permanent": true
+    },
+    {
+        "source": "/the-top-design-agencies-in-dallas-tx-2025-rankings/",
+        "destination": "/blog/top-design-agencies-dallas-2025/",
+        "permanent": true
+    },
+    {
+        "source": "/the-top-web-agencies-in-dallas-tx-2025-rankings/",
+        "destination": "/blog/top-web-agencies-dallas-2025/",
+        "permanent": true
+    },
+    {
+        "source": "/the-top-digital-agencies-in-dallas-tx-2025-rankings/",
+        "destination": "/blog/top-digital-agencies-dallas-2025/",
+        "permanent": true
+    },
+    {
+        "source": "/best-ai-seo-tools-2025-top-10-platforms-for-aeo-chatgpt-llm-visibility/",
+        "destination": "/blog/best-ai-seo-tools-2025/",
+        "permanent": true
+    },
+    {
+        "source": "/top-10-social-media-agencies-in-dallas-texas/",
+        "destination": "/blog/top-social-media-agencies-dallas/",
+        "permanent": true
+    },
+    {
+        "source": "/the-top-marketing-agencies-in-dallas-tx-2025-rankings/",
+        "destination": "/blog/top-marketing-agencies-dallas-2025/",
+        "permanent": true
+    },
+    {
+        "source": "/the-top-e-commerce-agencies-in-dallas-tx-2025-rankings/",
+        "destination": "/blog/top-ecommerce-agencies-dallas-2025/",
+        "permanent": true
+    },
+    {
+        "source": "/seo-companies-for-small-business/",
+        "destination": "/blog/seo-companies-for-small-business/",
+        "permanent": true
+    },
+    {
+        "source": "/dallas-content-marketing-agencies-that-drive-leads/",
+        "destination": "/blog/dallas-content-marketing-agencies/",
+        "permanent": true
+    },
+    {
+        "source": "/branding-agencies-in-dallas-that-build-iconic-brands/",
+        "destination": "/blog/branding-agencies-dallas/",
+        "permanent": true
+    },
+    {
+        "source": "/best-saas-performance-marketing-agencies-in-dallas/",
+        "destination": "/blog/saas-performance-marketing-agencies-dallas/",
+        "permanent": true
+    },
+    {
+        "source": "/local-marketing-agencies-that-help-small-businesses/",
+        "destination": "/blog/local-marketing-agencies-small-businesses/",
+        "permanent": true
+    },
+    {
+        "source": "/7-types-of-digital-marketing-to-build-a-full-funnel-strategy/",
+        "destination": "/blog/types-of-digital-marketing-full-funnel/",
+        "permanent": true
+    },
+    {
+        "source": "/case-studies/paid-social-advertising-drives-takeout-delivery-orders-2/",
+        "destination": "/case-studies/paid-social-advertising-takeout-delivery/",
+        "permanent": true
+    },
+    {
+        "source": "/case-studies/marketing-strategy-for-new-digital-marketing/",
+        "destination": "/case-studies/marketing-strategy-new-digital/",
+        "permanent": true
+    },
+    {
+        "source": "/case-studies/maximize-your-marketing-dollars/",
+        "destination": "/case-studies/maximize-marketing-dollars/",
+        "permanent": true
+    },
+    {
+        "source": "/case-studies/paid-social-advertising-drives-takeout-delivery-orders/",
+        "destination": "/case-studies/paid-social-advertising-wingstop/",
+        "permanent": true
+    },
+    {
+        "source": "/case-studies/marketing-success-for-holiday-pop-up-series/",
+        "destination": "/case-studies/holiday-popup-marketing-success/",
+        "permanent": true
+    },
+    {
+        "source": "/case-studies/growth-marketing-strategy-for-new-cowboy-boot-brand-2/",
+        "destination": "/case-studies/growth-marketing-cowboy-boot-brand-2/",
+        "permanent": true
+    },
+    {
+        "source": "/case-studies/growth-marketing-strategy-for-new-cowboy-boot-brand/",
+        "destination": "/case-studies/growth-marketing-cowboy-boot-brand/",
+        "permanent": true
+    },
+    {
+        "source": "/category/artificial-intelligence/",
+        "destination": "/blog?category=artificial-intelligence",
+        "permanent": true
+    },
+    {
+        "source": "/category/content/",
+        "destination": "/blog?category=content",
+        "permanent": true
+    },
+    {
+        "source": "/category/digital-marketing/",
+        "destination": "/blog?category=digital-marketing",
+        "permanent": true
+    },
+    {
+        "source": "/category/e-commerce/",
+        "destination": "/blog?category=ecommerce",
+        "permanent": true
+    },
+    {
+        "source": "/category/email/",
+        "destination": "/blog?category=email",
+        "permanent": true
+    },
+    {
+        "source": "/category/seo/",
+        "destination": "/blog?category=seo",
+        "permanent": true
+    },
+    {
+        "source": "/category/social-media/",
+        "destination": "/blog?category=social-media",
+        "permanent": true
+    },
+    {
+        "source": "/category/web-development/",
+        "destination": "/blog?category=web-development",
+        "permanent": true
+    },
+    {
+        "source": "/category/general/",
+        "destination": "/blog",
+        "permanent": true
+    },
+    {
+        "source": "/tag/advertising/",
+        "destination": "/blog?tag=advertising",
+        "permanent": true
+    },
+    {
+        "source": "/tag/advertising-agencies/",
+        "destination": "/blog?tag=advertising-agencies",
+        "permanent": true
+    },
+    {
+        "source": "/tag/ai-seo/",
+        "destination": "/blog?tag=ai-seo",
+        "permanent": true
+    },
+    {
+        "source": "/tag/best-dallas-agencies/",
+        "destination": "/blog?tag=best-dallas-agencies",
+        "permanent": true
+    },
+    {
+        "source": "/tag/best-design-agencies/",
+        "destination": "/blog?tag=best-design-agencies",
+        "permanent": true
+    },
+    {
+        "source": "/tag/best-digital-agencies/",
+        "destination": "/blog?tag=best-digital-agencies",
+        "permanent": true
+    },
+    {
+        "source": "/tag/best-e-commerce-agencies/",
+        "destination": "/blog?tag=best-ecommerce-agencies",
+        "permanent": true
+    },
+    {
+        "source": "/tag/best-ecommerce-seo-services/",
+        "destination": "/blog?tag=ecommerce-seo",
+        "permanent": true
+    },
+    {
+        "source": "/tag/best-email-marketing-agencies/",
+        "destination": "/blog?tag=email-marketing-agencies",
+        "permanent": true
+    },
+    {
+        "source": "/tag/best-web-agencies/",
+        "destination": "/blog?tag=best-web-agencies",
+        "permanent": true
+    },
+    {
+        "source": "/tag/chain-restaurants/",
+        "destination": "/blog?tag=chain-restaurants",
+        "permanent": true
+    },
+    {
+        "source": "/tag/creative-agencies-dallas/",
+        "destination": "/blog?tag=creative-agencies-dallas",
+        "permanent": true
+    },
+    {
+        "source": "/tag/creative-digital-dallas/",
+        "destination": "/blog?tag=creative-digital-dallas",
+        "permanent": true
+    },
+    {
+        "source": "/tag/dallas-branding/",
+        "destination": "/blog?tag=dallas-branding",
+        "permanent": true
+    },
+    {
+        "source": "/tag/dallas-e-commerce-agencies/",
+        "destination": "/blog?tag=dallas-ecommerce-agencies",
+        "permanent": true
+    },
+    {
+        "source": "/tag/dallas-graphic-design/",
+        "destination": "/blog?tag=dallas-graphic-design",
+        "permanent": true
+    },
+    {
+        "source": "/tag/dallas-marketing-agencies/",
+        "destination": "/blog?tag=dallas-marketing-agencies",
+        "permanent": true
+    },
+    {
+        "source": "/tag/dallas-marketing-firm-rankings/",
+        "destination": "/blog?tag=dallas-marketing-rankings",
+        "permanent": true
+    },
+    {
+        "source": "/tag/dallas-media-agencies/",
+        "destination": "/blog?tag=dallas-media-agencies",
+        "permanent": true
+    },
+    {
+        "source": "/tag/design/",
+        "destination": "/blog?tag=design",
+        "permanent": true
+    },
+    {
+        "source": "/tag/design-agencies/",
+        "destination": "/blog?tag=design-agencies",
+        "permanent": true
+    },
+    {
+        "source": "/tag/digital-agencies/",
+        "destination": "/blog?tag=digital-agencies",
+        "permanent": true
+    },
+    {
+        "source": "/tag/e-commerce/",
+        "destination": "/blog?tag=ecommerce",
+        "permanent": true
+    },
+    {
+        "source": "/tag/e-commerce-agencies/",
+        "destination": "/blog?tag=ecommerce-agencies",
+        "permanent": true
+    },
+    {
+        "source": "/tag/e-commerce-web-design/",
+        "destination": "/blog?tag=ecommerce-web-design",
+        "permanent": true
+    },
+    {
+        "source": "/tag/event-series-holiday-pop-ups/",
+        "destination": "/blog?tag=holiday-popups",
+        "permanent": true
+    },
+    {
+        "source": "/tag/facebook-adds-specialist/",
+        "destination": "/blog?tag=facebook-ads",
+        "permanent": true
+    },
+    {
+        "source": "/tag/marketing-agencies/",
+        "destination": "/blog?tag=marketing-agencies",
+        "permanent": true
+    },
+    {
+        "source": "/tag/marketing-experts/",
+        "destination": "/blog?tag=marketing-experts",
+        "permanent": true
+    },
+    {
+        "source": "/tag/online-marketing-dallas/",
+        "destination": "/blog?tag=online-marketing-dallas",
+        "permanent": true
+    },
+    {
+        "source": "/tag/ppc-advertising/",
+        "destination": "/blog?tag=ppc-advertising",
+        "permanent": true
+    },
+    {
+        "source": "/tag/saas-digital-marketing/",
+        "destination": "/blog?tag=saas-digital-marketing",
+        "permanent": true
+    },
+    {
+        "source": "/tag/social-media-marketing-dallas/",
+        "destination": "/blog?tag=social-media-marketing-dallas",
+        "permanent": true
+    },
+    {
+        "source": "/tag/texas-digital-agencies/",
+        "destination": "/blog?tag=texas-digital-agencies",
+        "permanent": true
+    },
+    {
+        "source": "/location/aeo-services-in-allen-tx/",
+        "destination": "/services/aeo/",
+        "permanent": true
+    },
+    {
+        "source": "/location/aeo-services-in-dallas-tx/",
+        "destination": "/services/aeo/",
+        "permanent": true
+    },
+    {
+        "source": "/location/aeo-services-in-frisco-tx/",
+        "destination": "/services/aeo/",
+        "permanent": true
+    },
+    {
+        "source": "/location/aeo-services-in-plano-tx/",
+        "destination": "/services/aeo/",
+        "permanent": true
+    },
+    {
+        "source": "/location/aeo-services-in-irving-tx/",
+        "destination": "/services/aeo/",
+        "permanent": true
+    },
+    {
+        "source": "/location/aeo-services-in-mckinney-tx/",
+        "destination": "/services/aeo/",
+        "permanent": true
+    },
+    {
+        "source": "/location/aeo-services-in-garland-tx/",
+        "destination": "/services/aeo/",
+        "permanent": true
+    },
+    {
+        "source": "/location/aeo-services-in-richardson-tx/",
+        "destination": "/services/aeo/",
+        "permanent": true
+    },
+    {
+        "source": "/location/aeo-services-in-carrollton-tx/",
+        "destination": "/services/aeo/",
+        "permanent": true
+    },
+    {
+        "source": "/location/aeo-services-in-mesquite-tx/",
+        "destination": "/services/aeo/",
+        "permanent": true
+    }
+]
