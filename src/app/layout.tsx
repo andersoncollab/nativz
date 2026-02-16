@@ -80,6 +80,38 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} font-sans antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Nativz",
+              url: "https://nativz.io",
+              logo: "https://nativz.io/images/nativz-logo.svg",
+              description: "Premium Dallas-Fort Worth marketing agency that builds AI-infused content systems, manages serious ad spend, and produces creative at volume.",
+              foundingDate: "2016",
+              areaServed: [
+                { "@type": "City", name: "Dallas" },
+                { "@type": "City", name: "Fort Worth" },
+                { "@type": "State", name: "Texas" },
+                { "@type": "Country", name: "United States" },
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+1-469-969-2903",
+                contactType: "sales",
+                availableLanguage: "English",
+              },
+              sameAs: [
+                "https://www.instagram.com/nativzmedia",
+                "https://www.linkedin.com/company/nativz",
+                "https://www.tiktok.com/@nativzmedia",
+                "https://www.facebook.com/nativzmedia",
+              ],
+            }),
+          }}
+        />
         <Navbar />
         {children}
         <Footer />

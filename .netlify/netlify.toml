@@ -1,0 +1,435 @@
+headersOrigin = "inline"
+redirectsOrigin = "inline"
+
+[images]
+remote_images = ["^(?:https:\\/\\/cdn\\.brandfetch\\.io(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$", "^(?:https:\\/\\/nativz\\.io(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$"]
+
+[functions]
+
+[functions."*"]
+
+[[plugins]]
+origin = "default"
+package = "@netlify/plugin-nextjs"
+
+[plugins.inputs]
+
+[build]
+publish = "/Users/trevoranderson/Antigravity Projects/nativz/out"
+publishOrigin = "config"
+commandOrigin = "config"
+command = "npm run build"
+
+[build.environment]
+NODE_VERSION = "20"
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[[headers]]
+for = "/*"
+
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+for = "/images/*"
+
+[headers.values]
+Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+for = "/_next/static/*"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+from = "/the-top-advertising-agencies-in-dallas-tx-2025-rankings/"
+to = "/blog/top-advertising-agencies-dallas-2025/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/the-top-social-media-agencies-in-dallas-tx-2025-rankings/"
+to = "/blog/top-social-media-agencies-dallas-2025/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/the-top-digital-marketing-agencies-in-dallas-tx-2025-rankings/"
+to = "/blog/top-digital-marketing-agencies-dallas-2025/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/the-top-seo-agencies-in-dallas-tx-2025-rankings/"
+to = "/blog/top-seo-agencies-dallas-2025/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/the-top-content-marketing-agencies-in-dallas-tx-2025-rankings/"
+to = "/blog/top-content-marketing-agencies-dallas-2025/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/the-top-branding-agencies-in-dallas-tx-2025-rankings/"
+to = "/blog/top-branding-agencies-dallas-2025/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/the-top-ppc-agencies-in-dallas-tx-2025-rankings/"
+to = "/blog/top-ppc-agencies-dallas-2025/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/the-top-pr-firms-in-dallas-tx-2025-rankings/"
+to = "/blog/top-pr-firms-dallas-2025/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/the-top-creative-agencies-in-dallas-tx-2025-rankings/"
+to = "/blog/top-creative-agencies-dallas-2025/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/the-top-web-design-agencies-in-dallas-tx-2025-rankings/"
+to = "/blog/top-web-design-agencies-dallas-2025/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/the-top-video-production-companies-in-dallas-tx-2025-rankings/"
+to = "/blog/top-video-production-companies-dallas-2025/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/the-top-email-marketing-agencies-in-dallas-tx-2025-rankings/"
+to = "/blog/top-email-marketing-agencies-dallas-2025/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/the-top-influencer-marketing-agencies-in-dallas-tx-2025-rankings/"
+to = "/blog/top-influencer-marketing-agencies-dallas-2025/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/meta-ads-vs-google-ads-which-is-better-for-your-business/"
+to = "/blog/meta-ads-vs-google-ads/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/local-seo-guide-for-dallas-businesses/"
+to = "/blog/local-seo-guide-dallas/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/complete-guide-to-social-media-management-for-small-businesses/"
+to = "/blog/social-media-management-guide/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/how-to-create-a-content-marketing-strategy-that-drives-revenue/"
+to = "/blog/content-marketing-strategy-guide/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/digital-marketing-trends-2025/"
+to = "/blog/digital-marketing-trends-2025/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/franchise-marketing-guide/"
+to = "/blog/franchise-marketing-guide/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/restaurant-marketing-strategies-2025/"
+to = "/blog/restaurant-marketing-strategies/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/ecommerce-advertising-strategies-that-convert/"
+to = "/blog/ecommerce-advertising-strategies/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/what-is-answer-engine-optimization/"
+to = "/blog/answer-engine-optimization-guide/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/ai-in-digital-marketing-handbook/"
+to = "/blog/ai-digital-marketing-guide/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/how-to-choose-a-marketing-agency/"
+to = "/blog/how-to-choose-marketing-agency/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/brand-identity-design-process/"
+to = "/blog/brand-identity-design-guide/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/email-marketing-best-practices-2025/"
+to = "/blog/email-marketing-best-practices/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/privacy"
+to = "/privacy-policy/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/terms"
+to = "/terms-of-service/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/*"
+to = "/404.html"
+status = 404.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/_next/image/"
+to = "/.netlify/images?url=:url&w=:width&q=:quality"
+status = 200.0
+force = false
+
+[redirects.query]
+url = ":url"
+w = ":width"
+q = ":quality"
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/_ipx/*"
+to = "/.netlify/images?url=:url&w=:width&q=:quality"
+status = 200.0
+force = false
+
+[redirects.query]
+url = ":url"
+w = ":width"
+q = ":quality"
+
+[redirects.conditions]
+
+[redirects.headers]
