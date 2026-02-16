@@ -17,7 +17,7 @@ const companyLinks = [
     { label: "Case Studies", href: "/case-studies" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
-    { label: "Pricing", href: "/#pricing" },
+    { label: "Pricing", href: "/pricing" },
 ];
 
 const socialLinks = [
@@ -159,13 +159,13 @@ export default function Footer() {
                     </p>
                     <div className="flex items-center gap-6">
                         <Link
-                            href="/privacy"
+                            href="/privacy-policy"
                             className="text-cool-gray hover:text-white text-xs transition-colors"
                         >
                             Privacy Policy
                         </Link>
                         <Link
-                            href="/terms"
+                            href="/terms-of-service"
                             className="text-cool-gray hover:text-white text-xs transition-colors"
                         >
                             Terms of Service
