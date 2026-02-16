@@ -27,7 +27,7 @@ export default function CTABanner() {
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                                 <Link
-                                    href="#contact"
+                                    href="/contact"
                                     className="group inline-flex items-center gap-2 px-8 py-4 bg-white text-navy font-bold rounded-xl hover:bg-white/90 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:-translate-y-0.5"
                                 >
                                     Book a Strategy Call

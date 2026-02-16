@@ -320,9 +320,9 @@ export default function Navbar() {
                                                     ),
                                                 },
                                                 {
-                                                    title: "Local Business Marketing",
+                                                    title: "Home Services Marketing",
                                                     description: "Dominate your local market",
-                                                    href: "/industries/local-business-marketing",
+                                                    href: "/industries/home-services-marketing",
                                                     icon: (
                                                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                                                             <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -532,7 +532,7 @@ export default function Navbar() {
                                     { title: "Franchise Marketing", href: "/industries/franchise-marketing" },
                                     { title: "E-Commerce", href: "/industries/ecommerce-marketing" },
                                     { title: "Restaurant Marketing", href: "/industries/restaurant-marketing" },
-                                    { title: "Local Business", href: "/industries/local-business-marketing" },
+                                    { title: "Home Services", href: "/industries/home-services-marketing" },
                                     { title: "Healthcare", href: "/industries/healthcare-marketing" },
                                     { title: "Real Estate", href: "/industries/real-estate-marketing" },
                                 ].map((item) => (

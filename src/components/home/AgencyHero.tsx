@@ -63,7 +63,7 @@ export default function AgencyHero() {
                         </svg>
                     </Link>
                     <Link
-                        href="#contact"
+                        href="/contact"
                         className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm"
                     >
                         Book a Strategy Call
