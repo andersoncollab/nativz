@@ -57,7 +57,6 @@ export default function SitemapPage() {
                                     { label: "Case Studies", href: "/case-studies" },
                                     { label: "Blog", href: "/blog" },
                                     { label: "Contact", href: "/contact" },
-                                    { label: "Pricing", href: "/pricing" },
                                     { label: "Andromeda", href: "/andromeda" },
                                 ].map((link) => (
                                     <li key={link.href}>
